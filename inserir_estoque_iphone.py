@@ -38,7 +38,7 @@ def extrair_itens(payload) -> list:
 def e_celular_ou_acessorio(item: dict) -> bool:
     """Retorna True apenas para celulares e acessórios (capas, etc.), excluindo hidrogel."""
     descricao = (item.get("descricao") or "").lower()
-    termos_excluidos = ("hidrogel", "traseira", "cartão de memória", "universal", "fosca com protecao", "tela confidencial", "fosca com pelicula")
+    termos_excluidos = ("hidrogel", "traseira", "cartão de memória", "universal", "fosca com protecao", "tela confidencial", "fosca com pelicula", "veicular", "camera armor")
     if any(t in descricao for t in termos_excluidos):
         return False
     if item.get("tipoProdutoDescricao") == "CELULAR":
